@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulsePass — Event Tickets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <div class="brand-badge">P</div>
+          <div>
+            <div class="brand-name">PulsePass</div>
+            <div class="brand-sub">Event booking</div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active">
+            <span>Discover</span>
+            <span class="nav-pill">12</span>
+          </button>
+          <button class="nav-item">
+            <span>My Tickets</span>
+            <span class="nav-pill muted">3</span>
+          </button>
+          <button class="nav-item">
+            <span>Favorites</span>
+          </button>
+          <button class="nav-item">
+            <span>Notifications</span>
+            <span class="nav-pill accent">5</span>
+          </button>
+        </nav>
+
+        <div class="summary-card">
+          <div class="summary-header">
+            <span>Trending near you</span>
+            <span class="dot success"></span>
+          </div>
+          <div class="mini-list">
+            <div class="mini-item">
+              <span>Live DJ Night</span>
+              <strong>94%</strong>
+            </div>
+            <div class="mini-item">
+              <span>City Run</span>
+              <strong>82%</strong>
+            </div>
+            <div class="mini-item">
+              <span>Tech Summit</span>
+              <strong>71%</strong>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Good evening</p>
+            <h1>Discover your next vibe</h1>
+          </div>
+          <div class="top-actions">
+            <div class="search-box">
+              <span>⌕</span>
+              <input type="text" value="Search events" aria-label="Search events" />
+            </div>
+            <button class="profile-button">JS</button>
+          </div>
+        </header>
+
+        <section class="hero-banner">
+          <div class="hero-copy">
+            <span class="tag">Featured</span>
+            <h2>Sunset Live Festival</h2>
+            <p>Music • Seattle • Aug 24 • From $79</p>
+            <div class="hero-actions">
+              <button class="primary-btn">Book now</button>
+              <button class="secondary-btn">View details</button>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="glow-ring"></div>
+            <div class="festival-card">
+              <div class="festival-info">
+                <span>Live Stage</span>
+                <strong>7:30 PM</strong>
+              </div>
+              <div class="ticket-chip">2,100 seats left</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="filter-row">
+          <div class="chip-set" id="categoryFilters">
+            <button class="chip active">All</button>
+            <button class="chip">Music</button>
+            <button class="chip">Food</button>
+            <button class="chip">Sports</button>
+            <button class="chip">Tech</button>
+            <button class="chip">Art</button>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="cards-column">
+            <div class="section-head">
+              <h3>Popular this week</h3>
+              <a href="#">See all</a>
+            </div>
+            <div id="eventList" class="event-list"></div>
+          </div>
+
+          <aside class="booking-panel">
+            <div class="panel-header">
+              <h3>Your booking</h3>
+              <span class="status-pill">Secure checkout</span>
+            </div>
+
+            <div class="booking-summary">
+              <div class="booking-item selected-event">
+                <div>
+                  <span class="label">Selected event</span>
+                  <strong id="selectedEventName">Sunset Live Festival</strong>
+                </div>
+                <span id="selectedEventPrice">$79</span>
+              </div>
+              <div class="qty-row">
+                <label>Tickets</label>
+                <div class="qty-control">
+                  <button id="decreaseQty">−</button>
+                  <span id="ticketQty">2</span>
+                  <button id="increaseQty">+</button>
+                </div>
+              </div>
+              <div class="pricing-row">
+                <span>Subtotal</span>
+                <strong id="subtotal">$158</strong>
+              </div>
+              <div class="pricing-row muted">
+                <span>Service fee</span>
+                <strong id="fee">$12</strong>
+              </div>
+              <div class="pricing-row total">
+                <span>Total</span>
+                <strong id="total">$170</strong>
+              </div>
+            </div>
+
+            <button id="checkoutButton" class="checkout-btn">Confirm booking</button>
+
+            <div class="notification-box">
+              <div class="notification-label">Live updates</div>
+              <ul id="notificationList">
+                <li>Reminder: Doors open at 6:30 PM</li>
+                <li>VIP lounge has 8 seats left</li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
